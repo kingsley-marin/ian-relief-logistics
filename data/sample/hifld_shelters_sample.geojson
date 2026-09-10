@@ -1,0 +1,399 @@
+{
+ "type": "FeatureCollection",
+ "name": "hifld_shelters_SAMPLE",
+ "source": "https://gis.fema.gov/arcgis/rest/services/NSS/FEMA_NSS/FeatureServer/5",
+ "source_label": "SAMPLE",
+ "note": "10 of 304 study-area features copied from a live fetch on 2026-09-09. Used ONLY when the FEMA NSS endpoint is unreachable. Not the full registry.",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -82.15036687999998,
+     27.00340551100004
+    ]
+   },
+   "properties": {
+    "shelter_id": 133931,
+    "shelter_name": "Port Charlotte High School",
+    "address_1": "18200 COCHRAN BLVD.",
+    "city": "PORT CHARLOTTE",
+    "county_parish": "CHARLOTTE",
+    "fips_code": " ",
+    "state": "FL",
+    "zip": "33948",
+    "facility_usage_code": "POST",
+    "evacuation_capacity": 0,
+    "post_impact_capacity": 300,
+    "ada_compliant": " ",
+    "wheelchair_accessible": " ",
+    "pet_accommodations_code": " ",
+    "generator_onsite": " ",
+    "in_100_yr_floodplain": " ",
+    "in_500_yr_floodplain": " ",
+    "in_surge_slosh_area": " ",
+    "pre_landfall_shelter": " ",
+    "shelter_status_code": "CLOSED",
+    "facility_type": "SHELTER",
+    "org_organization_name": "CHARLOTTE COUNTY",
+    "latitude": 27.00340551,
+    "longitude": -82.15036688,
+    "county_norm": "Charlotte",
+    "source_system": "HIFLD_NSS",
+    "source_label": "SAMPLE"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.88173084699997,
+     26.707117573000062
+    ]
+   },
+   "properties": {
+    "shelter_id": 134051,
+    "shelter_name": "North Fort Myers Academy For The Arts",
+    "address_1": "1856 ARTS WAY",
+    "city": "NORTH FORT MYERS",
+    "county_parish": "LEE",
+    "fips_code": " ",
+    "state": "FL",
+    "zip": "33917",
+    "facility_usage_code": "EVAC",
+    "evacuation_capacity": 2500,
+    "post_impact_capacity": 1250,
+    "ada_compliant": " ",
+    "wheelchair_accessible": " ",
+    "pet_accommodations_code": " ",
+    "generator_onsite": " ",
+    "in_100_yr_floodplain": " ",
+    "in_500_yr_floodplain": " ",
+    "in_surge_slosh_area": " ",
+    "pre_landfall_shelter": " ",
+    "shelter_status_code": "CLOSED",
+    "facility_type": "SHELTER",
+    "org_organization_name": "LEE COUNTY FLORIDA",
+    "latitude": 26.70711757,
+    "longitude": -81.88173085,
+    "county_norm": "Lee",
+    "source_system": "HIFLD_NSS",
+    "source_label": "SAMPLE"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -82.08975569999996,
+     27.05370700000003
+    ]
+   },
+   "properties": {
+    "shelter_id": 134032,
+    "shelter_name": "North Port High School (Pet Friendly)",
+    "address_1": "6440 W Price Blvd",
+    "city": "North Port",
+    "county_parish": "Sarasota",
+    "fips_code": null,
+    "state": "FL",
+    "zip": "34291",
+    "facility_usage_code": "BOTH",
+    "evacuation_capacity": null,
+    "post_impact_capacity": null,
+    "ada_compliant": "UNK",
+    "wheelchair_accessible": "YES",
+    "pet_accommodations_code": null,
+    "generator_onsite": "YES",
+    "in_100_yr_floodplain": null,
+    "in_500_yr_floodplain": null,
+    "in_surge_slosh_area": "NO",
+    "pre_landfall_shelter": "UNK",
+    "shelter_status_code": "CLOSED",
+    "facility_type": "SHELTER",
+    "org_organization_name": null,
+    "latitude": 27.053707,
+    "longitude": -82.0897557,
+    "county_norm": "Sarasota",
+    "source_system": "HIFLD_NSS",
+    "source_label": "SAMPLE"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.93019399999997,
+     26.728064000000074
+    ]
+   },
+   "properties": {
+    "shelter_id": 135125,
+    "shelter_name": "Island Coast High School (Pet Friendly)",
+    "address_1": "2125 De Navarra Pkwy",
+    "city": "Cape Coral",
+    "county_parish": "Lee",
+    "fips_code": null,
+    "state": "FL",
+    "zip": "33909",
+    "facility_usage_code": "BOTH",
+    "evacuation_capacity": null,
+    "post_impact_capacity": null,
+    "ada_compliant": "UNK",
+    "wheelchair_accessible": null,
+    "pet_accommodations_code": null,
+    "generator_onsite": null,
+    "in_100_yr_floodplain": null,
+    "in_500_yr_floodplain": null,
+    "in_surge_slosh_area": null,
+    "pre_landfall_shelter": "UNK",
+    "shelter_status_code": "CLOSED",
+    "facility_type": "SHELTER",
+    "org_organization_name": null,
+    "latitude": 26.728064,
+    "longitude": -81.930194,
+    "county_norm": "Lee",
+    "source_system": "HIFLD_NSS",
+    "source_label": "SAMPLE"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -82.06511799999998,
+     27.01109100000008
+    ]
+   },
+   "properties": {
+    "shelter_id": 134236,
+    "shelter_name": "Kingsway Elementary School - Pets",
+    "address_1": "23300 Quasar Blvd",
+    "city": "Port Charlotte",
+    "county_parish": "Charlotte",
+    "fips_code": null,
+    "state": "FL",
+    "zip": "33952",
+    "facility_usage_code": "POST",
+    "evacuation_capacity": null,
+    "post_impact_capacity": null,
+    "ada_compliant": "UNK",
+    "wheelchair_accessible": "YES",
+    "pet_accommodations_code": null,
+    "generator_onsite": "YES",
+    "in_100_yr_floodplain": null,
+    "in_500_yr_floodplain": null,
+    "in_surge_slosh_area": "YES",
+    "pre_landfall_shelter": "UNK",
+    "shelter_status_code": "CLOSED",
+    "facility_type": "SHELTER",
+    "org_organization_name": null,
+    "latitude": 27.011091,
+    "longitude": -82.065118,
+    "county_norm": "Charlotte",
+    "source_system": "HIFLD_NSS",
+    "source_label": "SAMPLE"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.84900199999998,
+     26.53741800000006
+    ]
+   },
+   "properties": {
+    "shelter_id": 133769,
+    "shelter_name": "South Fort Myers High School - Pets",
+    "address_1": "14020 Plantation Road",
+    "city": "Fort Myers",
+    "county_parish": "Lee",
+    "fips_code": null,
+    "state": "FL",
+    "zip": "33912",
+    "facility_usage_code": "BOTH",
+    "evacuation_capacity": null,
+    "post_impact_capacity": null,
+    "ada_compliant": "UNK",
+    "wheelchair_accessible": "YES",
+    "pet_accommodations_code": null,
+    "generator_onsite": "YES",
+    "in_100_yr_floodplain": null,
+    "in_500_yr_floodplain": null,
+    "in_surge_slosh_area": null,
+    "pre_landfall_shelter": "UNK",
+    "shelter_status_code": "CLOSED",
+    "facility_type": "SHELTER",
+    "org_organization_name": null,
+    "latitude": 26.537418000000002,
+    "longitude": -81.849002,
+    "county_norm": "Lee",
+    "source_system": "HIFLD_NSS",
+    "source_label": "SAMPLE"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.69994199999996,
+     26.16606900000005
+    ]
+   },
+   "properties": {
+    "shelter_id": 134369,
+    "shelter_name": "Golden Gate High School",
+    "address_1": "2325 Titan Way",
+    "city": "Naples",
+    "county_parish": "Collier",
+    "fips_code": null,
+    "state": "FL",
+    "zip": "34116",
+    "facility_usage_code": "BOTH",
+    "evacuation_capacity": null,
+    "post_impact_capacity": null,
+    "ada_compliant": "UNK",
+    "wheelchair_accessible": null,
+    "pet_accommodations_code": null,
+    "generator_onsite": "YES",
+    "in_100_yr_floodplain": "NO",
+    "in_500_yr_floodplain": null,
+    "in_surge_slosh_area": "YES",
+    "pre_landfall_shelter": "UNK",
+    "shelter_status_code": "CLOSED",
+    "facility_type": "SHELTER",
+    "org_organization_name": null,
+    "latitude": 26.166069,
+    "longitude": -81.699942,
+    "county_norm": "Collier",
+    "source_system": "HIFLD_NSS",
+    "source_label": "SAMPLE"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.77859599999994,
+     26.439684000000057
+    ]
+   },
+   "properties": {
+    "shelter_id": 134379,
+    "shelter_name": "Hertz Arena (Pet Friendly)",
+    "address_1": "11000 Everblades Parkway",
+    "city": "Estero",
+    "county_parish": "Lee",
+    "fips_code": null,
+    "state": "FL",
+    "zip": "33928",
+    "facility_usage_code": "BOTH",
+    "evacuation_capacity": null,
+    "post_impact_capacity": null,
+    "ada_compliant": "UNK",
+    "wheelchair_accessible": "NO",
+    "pet_accommodations_code": null,
+    "generator_onsite": "YES",
+    "in_100_yr_floodplain": "NO",
+    "in_500_yr_floodplain": null,
+    "in_surge_slosh_area": "NO",
+    "pre_landfall_shelter": "UNK",
+    "shelter_status_code": "CLOSED",
+    "facility_type": "SHELTER",
+    "org_organization_name": null,
+    "latitude": 26.439684,
+    "longitude": -81.778596,
+    "county_norm": "Lee",
+    "source_system": "HIFLD_NSS",
+    "source_label": "SAMPLE"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.83818989999997,
+     27.223744300000078
+    ]
+   },
+   "properties": {
+    "shelter_id": 352424,
+    "shelter_name": "Turner Agricultural Civic Center",
+    "address_1": "2260 NE Roan St.",
+    "city": "Arcadia",
+    "county_parish": "Desoto",
+    "fips_code": null,
+    "state": "FL",
+    "zip": "34266",
+    "facility_usage_code": "BOTH",
+    "evacuation_capacity": null,
+    "post_impact_capacity": null,
+    "ada_compliant": null,
+    "wheelchair_accessible": "YES",
+    "pet_accommodations_code": null,
+    "generator_onsite": "YES",
+    "in_100_yr_floodplain": "NO",
+    "in_500_yr_floodplain": null,
+    "in_surge_slosh_area": "NO",
+    "pre_landfall_shelter": null,
+    "shelter_status_code": "CLOSED",
+    "facility_type": "SHELTER",
+    "org_organization_name": null,
+    "latitude": 27.2237443,
+    "longitude": -81.8381899,
+    "county_norm": "DeSoto",
+    "source_system": "HIFLD_NSS",
+    "source_label": "SAMPLE"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.80154899999997,
+     26.428412000000037
+    ]
+   },
+   "properties": {
+    "shelter_id": 366510,
+    "shelter_name": "Estero Community Recreation Center (Pet Friendly)",
+    "address_1": "9200 Corkscrew Palms Blvd",
+    "city": "Estero",
+    "county_parish": "Lee",
+    "fips_code": null,
+    "state": "FL",
+    "zip": "33928",
+    "facility_usage_code": null,
+    "evacuation_capacity": null,
+    "post_impact_capacity": null,
+    "ada_compliant": null,
+    "wheelchair_accessible": null,
+    "pet_accommodations_code": null,
+    "generator_onsite": null,
+    "in_100_yr_floodplain": null,
+    "in_500_yr_floodplain": null,
+    "in_surge_slosh_area": null,
+    "pre_landfall_shelter": null,
+    "shelter_status_code": "CLOSED",
+    "facility_type": "SHELTER",
+    "org_organization_name": "Independent",
+    "latitude": 26.428412,
+    "longitude": -81.80154900000001,
+    "county_norm": "Lee",
+    "source_system": "HIFLD_NSS",
+    "source_label": "SAMPLE"
+   }
+  }
+ ]
+}

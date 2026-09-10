@@ -1,0 +1,126 @@
+# NASA GIBS (Global Imagery Browse Services) WMTS layers for the Hurricane Ian window.
+#
+# Nothing here is downloaded in bulk. A map UI (MapLibre/Leaflet) points at the tile template with a
+# date and GIBS serves the tiles. scripts/verify_gibs_layers.py fetches ONE tile per layer to prove the
+# ids and dates are valid.
+#
+# Every layer id below was checked against the live capabilities document on 2026-09-09:
+#   https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/WMTSCapabilities.xml
+# "coverage" states whether the layer's advertised time dimension includes every day 2022-09-26..2022-10-02.
+#
+# Terms: NASA GIBS imagery is free to use; NASA asks for attribution
+# ("We acknowledge the use of imagery provided by services from NASA's Global Imagery Browse Services (GIBS),
+#  part of NASA's Earth Science Data and Information System (ESDIS)").
+#
+# HONESTY: imagery shows clouds, floodwater and lights. It does NOT tell you whether a road is passable.
+# Use it as context for a human, and as a source for hand-entered rows in closures.csv — never as a
+# machine-read passability signal in this project.
+
+endpoint: https://gibs.earthdata.nasa.gov/wmts/epsg4326/best
+capabilities: https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/WMTSCapabilities.xml
+tile_template: "{endpoint}/{layer}/default/{time}/{tilematrixset}/{z}/{y}/{x}.{ext}"
+projection: EPSG:4326
+dates:
+  start: "2022-09-26"
+  end: "2022-10-02"
+  landfall: "2022-09-28"
+# A point inside the study area used by verify_gibs_layers.py to pick a tile: Fort Myers.
+probe_point:
+  lat: 26.64
+  lon: -81.87
+
+layers:
+  - id: VIIRS_SNPP_CorrectedReflectance_TrueColor
+    purpose: Daily true-colour daytime imagery (cloud cover, storm position, visible flooding after clouds clear).
+    tilematrixset: 250m
+    format: image/jpeg
+    ext: jpg
+    max_zoom: 8
+    time_dimension: daily
+    coverage: "7/7 days in window (advertised range 2022-08-10..2024-05-31 P1D)"
+
+  - id: MODIS_Terra_CorrectedReflectance_TrueColor
+    purpose: Second true-colour pass (morning overpass) — different cloud gaps than VIIRS.
+    tilematrixset: 250m
+    format: image/jpeg
+    ext: jpg
+    max_zoom: 8
+    time_dimension: daily
+    coverage: "7/7 days in window"
+
+  - id: MODIS_Combined_Flood_2-Day
+    purpose: NASA MODIS NRT Global Flood Product, 2-day composite. Best available flood layer for 2022 in GIBS (the VIIRS flood layers only start in 2025).
+    tilematrixset: 250m
+    format: image/png
+    ext: png
+    max_zoom: 8
+    time_dimension: daily
+    coverage: "7/7 days in window"
+    caveat: Cloud-masked; heavy cloud on 09-28/09-29 means the composite may show little until 09-30+. 250 m pixels — cannot resolve a bridge.
+
+  - id: MODIS_Combined_Flood_3-Day
+    purpose: Same product, 3-day composite — fills more cloud gaps at the cost of time resolution.
+    tilematrixset: 250m
+    format: image/png
+    ext: png
+    max_zoom: 8
+    time_dimension: daily
+    coverage: "7/7 days in window"
+
+  - id: VIIRS_SNPP_DayNightBand_At_Sensor_Radiance
+    purpose: Night-time lights (daily). Loss of lights after landfall is a rough proxy for power outage — NOT for road status.
+    tilematrixset: 500m
+    format: image/png
+    ext: png
+    max_zoom: 7
+    time_dimension: daily
+    coverage: "7/7 days in window"
+    note: >-
+      VIIRS_Black_Marble (the pretty annual composite) exists in GIBS but only for 2012 and 2016
+      (P1Y), so it cannot show September 2022. This daily Day/Night Band layer is the correct substitute.
+      Moonlight and clouds affect it; compare 09-26 (before) with 09-30 (after).
+
+  - id: VIIRS_SNPP_DayNightBand_ENCC
+    purpose: Day/Night Band, Enhanced Near Constant Contrast — easier to read than raw radiance for eyeballing outage extent.
+    tilematrixset: 500m
+    format: image/png
+    ext: png
+    max_zoom: 7
+    time_dimension: daily
+    coverage: "7/7 days in window"
+
+  - id: IMERG_Precipitation_Rate
+    purpose: GPM IMERG precipitation rate — rainfall context for inland (freshwater) flooding, e.g. the Peace and Myakka river closures on I-75.
+    tilematrixset: 2km
+    format: image/png
+    ext: png
+    max_zoom: 5
+    time_dimension: daily
+    coverage: "7/7 days in window"
+
+  - id: Coastlines_15m
+    purpose: Static coastline overlay for orientation. No time dimension.
+    tilematrixset: 15.625m
+    format: image/png
+    ext: png
+    max_zoom: 12
+    time_dimension: none
+    coverage: "n/a (static)"
+
+  - id: Reference_Labels_15m
+    purpose: Static place labels overlay. No time dimension.
+    tilematrixset: 15.625m
+    format: image/png
+    ext: png
+    max_zoom: 12
+    time_dimension: none
+    coverage: "n/a (static)"
+
+# Considered and rejected (kept here so nobody re-checks them):
+rejected:
+  - id: VIIRS_Black_Marble
+    reason: annual composites for 2012 and 2016 only; no 2022 dates.
+  - id: VIIRS_Combined_Flood_2-Day
+    reason: time dimension starts 2025-06-03; no 2022 data.
+  - id: GOES-East_ABI_GeoColor
+    reason: only a rolling recent window is served (10-minute cadence); no 2022 archive in GIBS.
