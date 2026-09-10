@@ -1,0 +1,25 @@
+site_id,hifld_shelter_id,shelter_name_hint,commodity,valid_from_utc,qty_needed,qty_delivered,priority,notes
+SH-134379,134379,Hertz Arena (Estero),water_cases,2022-09-29T06:00:00Z,1200,200,1,Synthetic quantities. Real HIFLD shelter id. Largest regional shelter.
+SH-134379,134379,Hertz Arena (Estero),meals_shelf_stable,2022-09-29T06:00:00Z,6000,1500,1,Synthetic quantities.
+SH-134379,134379,Hertz Arena (Estero),tarps,2022-09-29T06:00:00Z,300,0,3,Synthetic quantities.
+SH-133769,133769,South Fort Myers High School,water_cases,2022-09-29T06:00:00Z,600,100,1,Synthetic quantities.
+SH-133769,133769,South Fort Myers High School,meals_shelf_stable,2022-09-29T06:00:00Z,2400,600,2,Synthetic quantities.
+SH-135125,135125,Island Coast High School (Cape Coral),water_cases,2022-09-29T06:00:00Z,800,0,1,Synthetic. Cape Coral lost water service after the storm.
+SH-135125,135125,Island Coast High School (Cape Coral),meals_shelf_stable,2022-09-29T06:00:00Z,3000,400,2,Synthetic quantities.
+SH-135125,135125,Island Coast High School (Cape Coral),ice_bags,2022-09-29T12:00:00Z,500,0,2,Synthetic. Ice demand appears once the reefer is available.
+SH-134051,134051,North Fort Myers Academy for the Arts,water_cases,2022-09-29T06:00:00Z,500,150,2,Synthetic quantities.
+SH-134051,134051,North Fort Myers Academy for the Arts,meals_shelf_stable,2022-09-29T06:00:00Z,2000,500,2,Synthetic quantities.
+SH-366510,366510,Estero Community Recreation Center,water_cases,2022-09-29T06:00:00Z,200,50,3,Synthetic quantities.
+SH-366510,366510,Estero Community Recreation Center,tarps,2022-09-29T06:00:00Z,150,0,3,Synthetic quantities.
+SH-133931,133931,Port Charlotte High School,water_cases,2022-09-29T06:00:00Z,700,0,1,Synthetic quantities.
+SH-133931,133931,Port Charlotte High School,meals_shelf_stable,2022-09-29T06:00:00Z,2500,0,1,Synthetic quantities.
+SH-134236,134236,Kingsway Elementary (Port Charlotte),water_cases,2022-09-29T06:00:00Z,300,100,3,Synthetic quantities.
+SH-134369,134369,Golden Gate High School (Naples),water_cases,2022-09-29T06:00:00Z,400,400,4,Synthetic. Fully served — should show zero unmet.
+SH-134369,134369,Golden Gate High School (Naples),meals_shelf_stable,2022-09-29T06:00:00Z,1500,900,3,Synthetic quantities.
+SH-134032,134032,North Port High School,water_cases,2022-09-29T06:00:00Z,500,0,2,Synthetic quantities.
+SH-134032,134032,North Port High School,tarps,2022-09-29T06:00:00Z,200,0,3,Synthetic quantities.
+SH-352424,352424,Turner Agricultural Civic Center (Arcadia),water_cases,2022-09-29T06:00:00Z,350,0,2,Synthetic. DeSoto County; Peace River flooding peaked days later.
+SH-352424,352424,Turner Agricultural Civic Center (Arcadia),meals_shelf_stable,2022-09-30T06:00:00Z,1200,0,2,Synthetic. Later valid_from to exercise the as-of-time logic.
+SH-999999,999999,Nonexistent Shelter,water_cases,2022-09-29T06:00:00Z,100,0,3,DIRTY ROW ON PURPOSE: shelter id does not exist in HIFLD. Loader must reject and log it.
+SH-133769,133769,South Fort Myers High School,water_cases,2022-09-29T06:00:00Z,600,100,1,DIRTY ROW ON PURPOSE: exact duplicate of an earlier row. Loader must reject the second copy.
+SH-134051,134051,North Fort Myers Academy for the Arts,tarps,2022-09-29T06:00:00Z,-40,0,3,DIRTY ROW ON PURPOSE: negative quantity. Loader must reject and log it.

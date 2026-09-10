@@ -1,0 +1,11 @@
+site_id,commodity,as_of_utc,qty_on_hand,unit_kg,notes
+WH-01,water_cases,2022-09-29T06:00:00Z,6000,15.0,Synthetic. Case of 24 x 500 ml bottles ~ 15 kg.
+WH-01,meals_shelf_stable,2022-09-29T06:00:00Z,20000,0.6,Synthetic. One shelf-stable meal ~ 0.6 kg.
+WH-01,tarps,2022-09-29T06:00:00Z,3000,2.5,Synthetic. 20x25 ft blue tarp ~ 2.5 kg.
+WH-01,ice_bags,2022-09-29T12:00:00Z,4000,4.5,Synthetic. Arrives with the reefer at 12:00Z.
+WH-02,water_cases,2022-09-29T06:00:00Z,2500,15.0,Synthetic.
+WH-02,meals_shelf_stable,2022-09-29T06:00:00Z,8000,0.6,Synthetic.
+WH-02,tarps,2022-09-29T06:00:00Z,4000,2.5,Synthetic. Flatbed-heavy site.
+WH-03,water_cases,2022-09-29T06:00:00Z,3000,15.0,Synthetic.
+WH-03,meals_shelf_stable,2022-09-29T06:00:00Z,12000,0.6,Synthetic.
+WH-03,tarps,2022-09-29T06:00:00Z,1000,2.5,Synthetic.

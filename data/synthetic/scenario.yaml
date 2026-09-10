@@ -1,0 +1,64 @@
+# Scenario: Hurricane Ian, SW Florida, first days after landfall.
+#
+# KINGSLEY OWNS THIS FILE. Raphael pre-filled it with starter values so the pipeline runs end to end.
+# Every value marked TODO is a decision, not a fact. See docs/SCENARIO_TEMPLATE.md for what each field means
+# and the questions to answer before changing it.
+
+scenario_id: ian-2022-day1
+title: "Ian — Day 1 after landfall: water, meals and tarps to open shelters"
+storm:
+  atcf_id: AL092022
+  name: Ian
+  landfall_utc: "2022-09-28T19:05:00Z"      # NHC best track, Cayo Costa FL, 130 kt / 941 mb
+  landfall_local: "2022-09-28 15:05 EDT"
+
+# The moment the planner is "standing at". Everything (closures, inventory, demand) is evaluated as of this time.
+decision_time_utc: "2022-09-29T12:00:00Z"   # 08:00 EDT on Sept 29 — first morning after landfall
+planning_horizon_hours: 12                   # TODO(Kingsley): one shift? one day?
+
+study_area:
+  counties: [Lee, Charlotte, Collier, Sarasota, DeSoto]
+  roads_bbox: { south: 26.40, west: -82.35, north: 27.10, east: -81.60 }
+
+commodities:                                 # must match inventory.csv / demand.csv
+  - { id: water_cases,        unit: case,  unit_kg: 15.0 }
+  - { id: meals_shelf_stable, unit: meal,  unit_kg: 0.6 }
+  - { id: tarps,              unit: tarp,  unit_kg: 2.5 }
+  - { id: ice_bags,           unit: bag,   unit_kg: 4.5 }
+
+inputs:
+  sites_shelters: data/clean/hifld_shelters.geojson      # from HIFLD/FEMA NSS (or data/sample fallback)
+  sites_warehouses: data/synthetic/warehouses.csv
+  vehicles: data/synthetic/trucks.csv
+  inventory: data/synthetic/inventory.csv
+  demand: data/synthetic/demand.csv
+  closures: data/synthetic/closures.csv
+  roads: data/clean/roads.geojson
+  storm_track: data/clean/storm_track_al092022.csv
+
+# --- The thinking part -------------------------------------------------------------------------
+objective:
+  primary: "TODO(Kingsley): e.g. minimise total unmet priority-weighted demand at end of horizon"
+  secondary: "TODO(Kingsley): e.g. minimise total truck-kilometres; or maximise shelters reached"
+  tie_break: "TODO(Kingsley)"
+
+constraints:
+  respect_closures: true                     # a route through an active closure is not allowed
+  truck_capacity: true
+  truck_availability: true                   # trucks cannot leave before available_from_utc
+  max_stops_per_trip: 3                      # TODO(Kingsley)
+  average_speed_kmh: 40                      # TODO(Kingsley): post-storm roads are slow; debris, signals out
+  loading_minutes: 45                        # TODO(Kingsley)
+  unloading_minutes: 30                      # TODO(Kingsley)
+
+assumptions:                                 # write these down; interviewers ask about them
+  - "Straight-line distance is used in the demo; real routing must respect the road graph and closures."
+  - "Shelter demand is synthetic. Real 2022 shelter populations were not published per shelter."
+  - "Closures are reconstructed from news/FDOT statements with approximate times (see closures.csv source_note)."
+  - "HIFLD shelter registry is a current snapshot, not the September 2022 state."
+  - "Satellite imagery is context for a human, not a passability signal."
+
+success_criteria:                            # TODO(Kingsley): how will you know the plan is good?
+  - "Every priority-1 shelter receives at least X% of water demand within the horizon"
+  - "No truck is assigned a route through an active closure"
+  - "A human reviewer (food-bank coordinator / Red Cross volunteer) can explain each plan row from its explanation string"

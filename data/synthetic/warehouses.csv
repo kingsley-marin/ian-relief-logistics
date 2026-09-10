@@ -1,0 +1,6 @@
+site_id,name,city,county,lat,lon,notes
+WH-01,Fort Myers Regional Staging (synthetic),Fort Myers,Lee,26.5030,-81.8010,"Synthetic. Placed near I-75 exit 128 (Alico Rd) industrial area. Not a real facility."
+WH-02,Punta Gorda Airport Staging (synthetic),Punta Gorda,Charlotte,26.9200,-81.9900,"Synthetic. Placed near PGD airport / I-75 exit 161. Not a real facility."
+WH-03,Naples North Staging (synthetic),Naples,Collier,26.2740,-81.7420,"Synthetic. Placed near I-75 exit 111 (Immokalee Rd). Not a real facility."
+WH-04,Sarasota Fairgrounds Staging (synthetic),Sarasota,Sarasota,27.3380,,"DIRTY ROW ON PURPOSE: missing longitude. The loader must reject this and log it to data/clean/rejects.csv."
+WH-01,Fort Myers Regional Staging (synthetic),Fort Myers,Lee,26.5030,-81.8010,"DIRTY ROW ON PURPOSE: exact duplicate of WH-01. The loader must reject the second copy."

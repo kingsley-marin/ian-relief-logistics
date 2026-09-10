@@ -1,0 +1,6 @@
+vehicle_id,vehicle_type,capacity_kg,capacity_pallets,home_site_id,available_from_utc,notes
+T-01,box_truck_26ft,9000,12,WH-01,2022-09-29T06:00:00Z,Synthetic. 26 ft box truck.
+T-02,box_truck_26ft,9000,12,WH-01,2022-09-29T06:00:00Z,Synthetic. 26 ft box truck.
+T-03,flatbed,12000,16,WH-02,2022-09-29T06:00:00Z,Synthetic. Flatbed for tarps/plywood/water pallets.
+T-04,box_truck_16ft,4500,6,WH-03,2022-09-29T06:00:00Z,Synthetic. Smaller truck for tighter access.
+T-05,reefer_26ft,8000,10,WH-01,2022-09-29T12:00:00Z,Synthetic. Refrigerated; available six hours later than the others.
