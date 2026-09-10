@@ -1,0 +1,28 @@
+# PostGIS for local development.
+#   make up      -> starts the database and applies sql/schema.sql on first boot
+#   make down    -> stops it (data persists in the named volume)
+#   make reset   -> stops it AND deletes the volume (fresh schema next boot)
+#
+# Credentials are local-only and intentionally simple. They match .env.example.
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: ianrelief-db
+    environment:
+      POSTGRES_DB: ianrelief
+      POSTGRES_USER: ian
+      POSTGRES_PASSWORD: ian
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Anything in this directory runs once, on first initialisation of the volume.
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/10_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ian -d ianrelief"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  pgdata:

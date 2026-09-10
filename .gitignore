@@ -1,0 +1,29 @@
+# --- secrets / local config ---
+.env
+*.env
+!.env.example
+
+# --- data: raw downloads are never committed (re-fetch with `make fetch`) ---
+data/raw/*
+!data/raw/.gitkeep
+# cleaned outputs are derived; only the .gitkeep and rejects log pattern are tracked
+data/clean/*
+!data/clean/.gitkeep
+
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# --- postgres volume (if someone points it at the repo) ---
+pgdata/
+
+# --- editors / OS ---
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ianrelief"
+version = "0.1.0"
+description = "Hurricane Ian (2022, SW Florida) disaster-response logistics simulator — data pipeline scaffold"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.31",
+  "psycopg2-binary>=2.9",
+  "PyYAML>=6.0",
+  "shapely>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.3"]
+# Kingsley: uncomment when you start the real allocation engine.
+# solver = ["ortools>=9.8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "db: needs a running PostGIS (set IAN_DATABASE_URL; skipped otherwise)",
+  "network: makes live HTTP calls to public APIs (skipped unless IAN_TEST_NETWORK=1)",
+]

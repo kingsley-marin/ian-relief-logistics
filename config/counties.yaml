@@ -1,0 +1,36 @@
+# Study area: the five Florida counties that took the brunt of Hurricane Ian's landfall
+# (landfall: Cayo Costa, Lee County, 2022-09-28 19:05 UTC, Category 4).
+# FIPS codes are the 5-digit state+county codes used by the Census Bureau (state 12 = Florida).
+state_fips: "12"
+counties:
+  - { name: "Lee",       fips: "12071" }
+  - { name: "Charlotte", fips: "12015" }
+  - { name: "Collier",   fips: "12021" }
+  - { name: "Sarasota",  fips: "12115" }
+  - { name: "DeSoto",    fips: "12027" }
+
+# HIFLD/FEMA spells this county several ways in the shelter data; all are normalised to "DeSoto".
+county_name_aliases:
+  "DE SOTO": "DeSoto"
+  "DESOTO": "DeSoto"
+
+# Bounding box for the road download (Overpass). south, west, north, east in EPSG:4326.
+# Covers Fort Myers, Cape Coral, Sanibel/Captiva, Pine Island, Punta Gorda, Port Charlotte, North Port.
+# Deliberately NOT the whole five-county area: Overpass is a shared free service; keep requests bounded.
+roads_bbox:
+  south: 26.40
+  west: -82.35
+  north: 27.10
+  east: -81.60
+
+# Highway classes pulled from OSM. Residential/service roads are excluded on purpose (size).
+roads_highway_classes:
+  - motorway
+  - motorway_link
+  - trunk
+  - trunk_link
+  - primary
+  - primary_link
+  - secondary
+  - secondary_link
+  - tertiary
